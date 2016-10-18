@@ -2,12 +2,12 @@
   become: yes
   become_user: '{{postgresql_admin_user}}'
   blockinfile:
-    dest: '{{postgresql_data_dir }}/pg_hba.conf'
+    dest: '{{postgresql_data_dir}}/pg_hba.conf'
     insertafter: '^# TYPE'
     content: |
       {% for user in postgresql_users %}
-      local all {{ user.name }} md5
-      host all {{ user.name }} 0.0.0.0/0 md5
+      local all {{user.name}} md5
+      host all {{user.name}} 0.0.0.0/0 md5
       {% endfor %}
   notify: Restart PostgreSQL service
 
@@ -15,7 +15,7 @@
   become: yes
   become_user: '{{postgresql_admin_user}}'
   blockinfile:
-    dest: '{{postgresql_data_dir }}/postgresql.conf'
+    dest: '{{postgresql_data_dir}}/postgresql.conf'
     content: |
       listen_addresses = '*'
   notify: Restart PostgreSQL service
