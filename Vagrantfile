@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "bento/centos-7.1"
+  config.vm.box = "bento/centos-7.2"
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder ".", "/vagrant/ansible-postgresql", create: true, mount_options: ['dmode=777','fmode=666']
   config.vm.provision "shell", inline: <<-SHELL
@@ -8,7 +8,6 @@ Vagrant.configure(2) do |config|
 
     cd /vagrant/ansible-postgresql/tests
 
-    ansible-galaxy install yaegashi.blockinfile
     ansible-playbook -i hosts playbook.yml
   SHELL
 end

@@ -1,6 +1,6 @@
 postgresql_version: 9.5
-postgresql_version_terse: "{{ postgresql_version | replace('.', '') }}"
-postgresql_yum_repository_url: http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
+postgresql_version_terse: "{{postgresql_version | replace('.', '')}}"
+postgresql_yum_repository_url: https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-3.noarch.rpm
 postgresql_service_name: postgresql-{{ postgresql_version }}
 postgresql_data_dir: /var/lib/pgsql/{{ postgresql_version }}/data
 postgresql_admin_user: postgres

@@ -2,5 +2,4 @@
   vars_files:
     - ./vars.yml
   roles:
-    - yaegashi.blockinfile
     - ansible-postgresql

@@ -1,8 +1,8 @@
 - name: Add configuration to pg_hba.conf
   become: yes
-  become_user: "{{ postgresql_admin_user }}"
+  become_user: '{{postgresql_admin_user}}'
   blockinfile:
-    dest: "{{ postgresql_data_dir }}/pg_hba.conf"
+    dest: '{{postgresql_data_dir }}/pg_hba.conf'
     insertafter: '^# TYPE'
     content: |
       {% for user in postgresql_users %}
@@ -13,9 +13,9 @@
 
 - name: Add configuration to /var/lib/pgsql/9.5/data/postgresql.conf
   become: yes
-  become_user: "{{ postgresql_admin_user }}"
+  become_user: '{{postgresql_admin_user}}'
   blockinfile:
-    dest: "{{ postgresql_data_dir }}/postgresql.conf"
+    dest: '{{postgresql_data_dir }}/postgresql.conf'
     content: |
       listen_addresses = '*'
   notify: Restart PostgreSQL service
