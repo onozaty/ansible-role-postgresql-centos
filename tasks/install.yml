@@ -1,21 +1,16 @@
 - name: Add PostgreSQL yum repository
-  become: yes
   yum: name={{postgresql_yum_repository_url}}
 
 - name: Install dependencies
-  become: yes
   yum: name=python-psycopg2
 
 - name: Install PostgreSQL
-  become: yes
   yum: name=postgresql{{postgresql_version_terse}}-server
 
 - name: Init database
-  become: yes
   command: >
     /usr/pgsql-{{postgresql_version}}/bin/postgresql{{postgresql_version_terse}}-setup initdb creates={{postgresql_data_dir}}/postgresql.conf
 
 - name: Start PostgreSQL service
-  become: yes
   service: name={{postgresql_service_name}} state=started enabled=yes
 
