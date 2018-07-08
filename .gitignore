@@ -1,2 +1,3 @@
 yaegashi.blockinfile/
 .vagrant/
+tests/playbook.retry

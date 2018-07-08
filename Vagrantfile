@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "bento/centos-7.2"
+  config.vm.box = "bento/centos-7.3"
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder ".", "/vagrant/ansible-postgresql", create: true, mount_options: ['dmode=777','fmode=666']
   config.vm.provision "shell", inline: <<-SHELL

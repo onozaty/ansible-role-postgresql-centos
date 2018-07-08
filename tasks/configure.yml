@@ -11,7 +11,7 @@
       {% endfor %}
   notify: Restart PostgreSQL service
 
-- name: Add configuration to /var/lib/pgsql/9.5/data/postgresql.conf
+- name: Add configuration to postgresql.conf
   become: yes
   become_user: '{{postgresql_admin_user}}'
   blockinfile:
