@@ -8,6 +8,7 @@
       {% for user in postgresql_users %}
       local all {{user.name}} md5
       host all {{user.name}} 0.0.0.0/0 md5
+      host all {{user.name}} ::0/0 md5
       {% endfor %}
   notify: Restart PostgreSQL service
 
