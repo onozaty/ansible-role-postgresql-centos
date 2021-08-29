@@ -1,4 +1,4 @@
-postgresql_version: 12
+postgresql_version: 13
 postgresql_version_terse: "{{postgresql_version | replace('.', '')}}"
 postgresql_yum_repository_url: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 postgresql_service_name: postgresql-{{postgresql_version}}
