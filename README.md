@@ -1,2 +1,3 @@
-# ansible-postgresql
-Install PostgreSQL
+# ansible-role-postgresql-centos
+
+Install PostgreSQL to CentOS.
